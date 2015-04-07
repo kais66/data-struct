@@ -5,6 +5,7 @@ class TrieNode:
         self.child = [None for i in range(256)] # Used to hold TrieNode pointers
 
     def add(self, s):
+        if not s: return
         nd = self
         for i in range(len(s)):
             ind = ord(s[i])
@@ -15,6 +16,7 @@ class TrieNode:
         nd.isEnd = True
 
     def search(self, s):
+        if not s: return True
         nd = self
         for i in range(len(s)):
             ind = ord(s[i])
